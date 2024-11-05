@@ -1,0 +1,91 @@
+{% extends 'dbusers/base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body class="body-style">
+    <div class="container">
+        <!-- Navbar -->
+        <div class="header">
+          <nav class="navbar">
+            <a href="#"><img class="logo" src="{% static 'assets/CheveningSquare.png' %}" /></a>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#">About</a></li>
+                <li class="nav-item"><a href="#">Services</a></li>
+                <li class="nav-item"><a href="{%url 'blog:post_list' %}" >Press</a></li>
+                <li class="nav-item"><a href="#">Events</a></li>
+                <li class="nav-item sign-in">
+                    <a href="{% url 'dbusers:login' %}"><button>Sign In</button></a>
+                </li>
+                <li class="nav-item create-account">
+                    <a href="{% url 'dbusers:register' %}"><button>Create Account</button></a>
+                </li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <img class="hero-logo" src="{% static 'assets/CheveningLogo.png' %}" />
+            <div class="hero-content">
+                <p class="hero-text">Lorem ipsum dolor sit amet consectetur.</p>
+                <h1 class="hero-title">Lorem ipsum dolor sit amet consectetur.</h1>
+                <button class="hero-button">Learn More</button>
+            </div>
+            <!-- Cards Section -->
+            <div class="hero-cards">
+                <div class="card">
+                  <img src="{% static 'assets/AtSign_1.svg' %}" alt="">
+                  <p class="card-text">Connect with Chevening Alumni in Kenya and expand your network</p>
+                </div>
+                <!-- Additional cards as needed -->
+            </div>
+        </div>
+
+        <!-- DarkContainer Section -->
+        <div class="DarkContainer">
+            <img class="ImageLarge" src="https://via.placeholder.com/488x448" />
+            <div class="TextContainer">
+                <div class="MainText">Lorem ipsum dolor sit amet consectetur.</div>
+                <div class="SubText">Lorem ipsum dolor sit amet consectetur.</div>
+            </div>
+        </div>
+
+        <!-- Partners Section -->
+        <div class="PartnersSection">
+            <h2 class="PartnersTitle">Our Partners</h2>
+            <div class="PartnersContainer">
+                <a href="#" class="Logo">
+                    <img src="https://via.placeholder.com/100x100" alt="Partners Logo" />
+                </a>
+                <!-- Additional partner logos -->
+            </div>    
+        </div>
+
+        <!-- Footer -->
+        <footer class="Footer">
+            <div class="FooterContent">
+                <a href="#"><img class="LogoImage" src="{% static 'assets/CheveningLogoLight.png' %}" alt="Company Logo" /></a>
+        
+                <div class="FooterLinks">
+                    <div class="FooterColumn">
+                        <h3 class="ColumnTitle">Learn More</h3>
+                        <a href="#" class="ColumnItem">About Us</a>
+                        <a href="#" class="ColumnItem">Press Releases</a>
+                        <a href="#" class="ColumnItem">Events</a>
+                        <a href="#" class="ColumnItem">Jobs</a>
+                        <a href="#" class="ColumnItem">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="Divider"></div>
+            <div class="FooterCopyright">© 2024, Chevening Kenya Alumni Network. | All Rights Reserved</div>
+        </footer>
+    </div>
+</body>
+</html>
+{% endblock %}

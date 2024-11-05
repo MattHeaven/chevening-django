@@ -1,0 +1,628 @@
+.body-style {
+    width: 100vw;
+    height: 100%;
+    background: white;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: inline-flex;
+}
+
+.container {
+    padding: 0 20px;
+    width: 100%;
+}
+
+.header {
+    align-self: stretch;
+    height: fit-content;
+    padding-top: 32px;
+    background: white;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 32px;
+    display: flex;
+}
+
+.navbar {
+    align-self: stretch;
+    height: fit-content;
+    justify-content: space-between;
+    align-items: center;
+    display: inline-flex;
+    padding: 0 10%;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    position: relative;
+}
+
+.nav-list {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-item {
+    color: #93969D;
+    font-size: 20px;
+    font-family: General Sans;
+    font-weight: 400;
+    line-height: 20px;
+    word-wrap: break-word;
+}
+
+.sign-in {
+    border: 1px solid #93969D;
+    padding: 5px 20px;
+    border-radius: 2px;
+}
+
+.hero {
+    align-self: stretch;
+    height: fit-content;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    display: flex;
+}
+
+.hero-logo {
+    width: 400px;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.hero-text {
+    width: fit-content;
+    text-align: center;
+    color: #A68A48;
+    font-size: 32px;
+    font-family: Gambetta;
+    font-weight: 400;
+    word-wrap: break-word;
+    line-height: 110%;
+}
+
+.hero-title {
+    width: 100%;
+    text-align: center;
+    color: #1E293B;
+    font-size: 80px;
+    font-family: General Sans;
+    font-weight: 500;
+    word-wrap: break-word;
+    line-height: 110%;
+}
+
+.hero-button {
+    padding: 8px 16px;
+    background: #1E293B;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    display: inline-flex;
+    color: #fff;
+    font-family: General Sans;
+}
+
+.hero-cards {
+    align-self: stretch;
+    height: fit-content;
+    padding-bottom: 64px;
+    width: fit-content;
+    min-width: 500px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    display: inline-flex;
+}
+
+.card {
+    flex: 1 1 0;
+    align-self: stretch;
+    padding: 16px;
+    border-radius: 7px;
+    border: 1px #9B9799 solid;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
+    display: inline-flex;
+}
+
+.card-text {
+    align-self: stretch;
+    text-align: center;
+    color: #9B9799;
+    font-size: 16px;
+    font-family: General Sans;
+    font-weight: 400;
+    line-height: 110%;
+    word-wrap: break-word;
+}
+
+.SectionContainer {
+    align-self: stretch;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.ContentWrapper {
+    align-self: stretch;
+    background: #1F2937;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 64px;
+    padding: 16px 80px;
+}
+
+.ContentImage {
+    border-radius: 6px;
+    
+}
+
+.TextContainer {
+    flex: 1 1 0;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.MainText {
+    width: 100%;
+    color: white;
+    font-size: 32px;
+    font-family: 'General Sans';
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+.SubText {
+    width: 100%;
+    color: #A4A2A5;
+    font-size: 24px;
+    font-family: Gambetta;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.ProfileContainer {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+}
+
+.ProfileImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.ProfileTextContainer {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.ProfileName {
+    color: white;
+    font-size: 16px;
+    font-family: 'General Sans';
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.ProfileDate {
+    color: white;
+    font-size: 16px;
+    font-family: 'General Sans';
+    font-weight: 200;
+    word-wrap: break-word;
+}
+
+.SectionPadding {
+
+    background: #F3F5F9;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ContentBox {
+    width: 1046px;
+    height: 412px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.ContentImage {
+    width: 488px;
+    height: 412px;
+}
+
+.TextOverlayContainer {
+
+}
+
+.OverlayBox {
+    padding: 8px 16px;
+    position: absolute;
+    top: 234px;
+    left: 0;
+    background: #1E293B;
+    border-radius: 6px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.OverlayText {
+    color: white;
+    font-size: 14px;
+    font-family: Inter;
+    font-weight: 500;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+.DescriptionText {
+    width: 450px;
+    height: 100px;
+    position: absolute;
+    top: 106px;
+    left: 0;
+    color: #79777B;
+    font-size: 16px;
+    font-family: Gambetta;
+    font-weight: 400;
+    line-height: 25px;
+    word-wrap: break-word;
+}
+
+.TitleText {
+    width: 336px;
+    height: 94px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #2D3956;
+    font-size: 37px;
+    font-family: 'General Sans';
+    font-weight: 600;
+    line-height: 47px;
+    word-wrap: break-word;
+}
+
+.Section2 {
+    width: 100%;
+    height: 100%;
+    padding: 64px;
+    background: #F3F5F9;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.ContentFlex {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 100px;
+}
+
+.TextBox {
+    width: 458px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.Title {
+    align-self: stretch;
+    height: fit-content;
+    color: #2D3956;
+    font-size: 37px;
+    font-family: 'General Sans';
+    font-weight: 600;
+    line-height: 47px;
+    word-wrap: break-word;
+}
+
+.Description {
+    align-self: stretch;
+    height: fit-content;
+    color: #79777B;
+    font-size: 16px;
+    font-family: Gambetta;
+    font-weight: 400;
+    line-height: 25px;
+    word-wrap: break-word;
+}
+
+.ButtonBox {
+    padding: 8px 16px;
+    background: #1E293B;
+    border-radius: 6px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.ButtonText {
+    color: white;
+    font-size: 14px;
+    font-family: Inter;
+    font-weight: 500;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+.Image {
+    width: 488px;
+    height: 412px;
+}
+
+.DarkContainer {
+    display: inline-flex;
+width: 100%;
+height: 100%;
+padding: 64px;
+background: #1F2937;
+display: inline-flex;
+justify-content: center;
+align-items: center;
+gap: 64px;
+}
+
+.ImageLarge {
+width: 448px;
+align-self: stretch;
+border-radius: 6px;
+}
+
+.TextContainer {
+display: inline-flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: flex-start;
+gap: 16px;
+width: fit-content;
+max-width: 500px;
+}
+
+.MainText {
+color: white;
+font-size: 32px;
+font-family: 'General Sans';
+font-weight: 600;
+word-wrap: break-word;
+}
+
+.SubText {
+
+color: #A4A2A5;
+font-size: 24px;
+font-family: Gambetta;
+font-weight: 400;
+word-wrap: break-word;
+}
+
+.ProfileContainer {
+display: inline-flex;
+justify-content: flex-start;
+align-items: center;
+gap: 16px;
+}
+
+.ProfileImage {
+width: 70px;
+height: 70px;
+border-radius: 50%;
+}
+
+.ProfileTextContainer {
+display: inline-flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: flex-start;
+gap: 4px;
+}
+
+.ProfileName {
+color: white;
+font-size: 24px;
+font-family: 'General Sans';
+font-weight: 500;
+word-wrap: break-word;
+}
+
+.ProfileDate {
+color: white;
+font-size: 24px;
+font-family: 'General Sans';
+font-weight: 400;
+word-wrap: break-word;
+}
+
+.PartnersSection {
+    width: 100%;
+    background: #F3F5F9;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+}
+
+.PartnersTitle {
+    color: black;
+    font-size: 32px;
+    font-family: 'General Sans';
+    font-weight: 600;
+    line-height: 32px;
+    word-wrap: break-word;
+}
+
+.PartnersContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.Logo {
+    height: 100px; /* Set a constant height for logos */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+}
+
+.Logo img {
+    height: 100%; /* Constant height for logos */
+    object-fit: contain;
+}
+
+.Footer {
+    width: 100%;
+    height: fit-content;
+    background: #0A142F;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 32px;
+    min-width: 820px;
+    margin-top: 32px;
+}
+
+.FooterContent {
+    width: 80%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    max-width: 800px;
+}
+
+.LogoImage {
+    width: 200px;
+}
+
+.FooterLinks {
+    flex: 1 1 0;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.FooterColumn {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.ColumnTitle {
+    color: white;
+    font-size: 16px;
+    font-family: 'General Sans';
+    font-weight: 400;
+}
+
+.ColumnItem {
+    opacity: 0.8;
+    color: white;
+    font-size: 14px;
+    font-family: 'General Sans';
+    font-style: italic;
+    font-weight: 500;
+    line-height: 30px;
+}
+
+.ContactInfo {
+    width: 220px;
+    color: white;
+    font-size: 14px;
+    font-family: 'General Sans';
+    font-weight: 500;
+}
+
+.ContactItem {
+    opacity: 0.7;
+    font-style: italic;
+    margin-right: 8px;
+}
+
+.SocialIcons {
+    width: fit-content;
+    color: white;
+    font-size: 18px;
+    font-family: 'General Sans';
+    font-weight: 400;
+}
+
+.IconContainer {
+    display: flex;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.SocialIcon {
+    width: 20px;
+    height: 20px;
+}
+
+.Divider {
+    width: 1073px;
+    height: 1px;
+    opacity: 0.15;
+    background: white;
+    border: 1px solid white;
+    margin: 16px 0;
+}
+
+.FooterCopyright {
+    opacity: 0.75;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    font-family: 'General Sans';
+    font-weight: 400;
+}
