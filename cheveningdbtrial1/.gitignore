@@ -1,0 +1,11 @@
+__pycache__/
+dbtrial/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+*.env
+media/
+static/
