@@ -5,87 +5,453 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/styles.css' %}"> -->
 </head>
 <body class="body-style">
-    <div class="container">
-        <!-- Navbar -->
-        <div class="header">
-          <nav class="navbar">
-            <a href="#"><img class="logo" src="{% static 'assets/CheveningSquare.png' %}" /></a>
-            <ul class="nav-list">
-                <li class="nav-item"><a href="#">About</a></li>
-                <li class="nav-item"><a href="#">Services</a></li>
-                <li class="nav-item"><a href="{%url 'blog:post_list' %}" >Press</a></li>
-                <li class="nav-item"><a href="#">Events</a></li>
-                <li class="nav-item sign-in">
-                    <a href="{% url 'dbusers:login' %}"><button>Sign In</button></a>
-                </li>
-                <li class="nav-item create-account">
-                    <a href="{% url 'dbusers:register' %}"><button>Create Account</button></a>
-                </li>
-            </ul>
-          </nav>
+    <body class="body-style">
+        <div class="container" style="max-width: 1200px; margin-top: 0">
+            <!-- Navbar -->
+            <div class="header" style="padding: 20px 0;">
+                <nav class="navbar" style="
+                    display: flex; 
+                    justify-content: space-between; 
+                    align-items: center; 
+                    font-family: Arial, sans-serif; 
+                    background-color: #f8f9fa; 
+                    border-bottom: 3px solid #1e6fa1;
+                    border-top: 3px solid #1e6fa1;
+                    padding: 10px 20px;
+                ">
+                    <!-- Logo -->
+                    <a href="#">
+                        <img class="logo" src="{% static 'assets/CheveningSquare.png' %}" alt="Logo" style="height: 70px;">
+                    </a>
+    
+                    <!-- Navigation Links -->
+                    <ul class="nav-list" style="
+                        display: flex; 
+                        list-style: none; 
+                        margin: 0; 
+                        padding: 0;
+                    ">
+                        <li class="nav-item" style="margin-right: 20px;">
+                            <a href="#about_us" style="
+                                text-decoration: none; 
+                                color: #000000; 
+                                font-weight: 500;
+                                font-size: 16px;
+                                " onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'"
+                            >About</a>
+                        </li>
+                        <li class="nav-item" style="margin-right: 20px;">
+                            <a href="#Services" style="
+                                text-decoration: none; 
+                                color: #000000; 
+                                font-weight: 500;
+                                font-size: 16px;
+                                " onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'"
+                            >Services</a>
+                        </li>
+                        <li class="nav-item" style="margin-right: 20px;">
+                            <a href="{% url 'blog:post_list' %}" style="
+                                text-decoration: none; 
+                                color: #000000; 
+                                font-weight: 500;
+                                font-size: 16px;
+                                " onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'"
+                            >Blog</a>
+                        </li>
+                        <!-- <li class="nav-item" style="margin-right: 20px;">
+                            <a href="#" style="
+                                text-decoration: none; 
+                                color: #333; 
+                                font-weight: 500;
+                                font-size: 16px;
+                            ">Events</a>
+                        </li> -->
+
+                        <!-- Create Profile Button
+                        <li class="nav-item" style="margin-left: auto;margin-right:10px;">
+                            <a href="{% url 'dbusers:create_profile' %}" style="text-decoration: none;">
+                                <button style=" background-color: #007bff; color: white; border: none; border-radius: 4px; font-size: 1em; cursor: pointer; transition: background-color 0.3s;">
+                                    Create Profile
+                                </button>
+                            </a>
+                        </li> -->
+    
+                        <!-- Sign In & Create Account Buttons -->
+                        <li class="nav-item sign-in" style="margin-right: 10px;">
+                            <a href="{% url 'dbusers:login' %}?next={% url 'dbusers:profile' %}"style="
+                                text-decoration: none;
+                            ">
+                                <button style="
+                                    /* padding: 8px 16px;  */
+                                    background-color: #007bff; 
+                                    color: #fff; 
+                                    border: none; 
+                                    border-radius: 4px; 
+                                    cursor: pointer;
+                                    font-size: 14px;
+                                    outline: none;
+                                    " onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007bff'"
+                                >Sign In</button>
+                            </a>
+                        </li> 
+                      
+                    </ul>
+                </nav>
+            </div>
         </div>
+    </body>
+  
 
         <!-- Hero Section -->
-        <div class="hero">
-            <img class="hero-logo" src="{% static 'assets/CheveningLogo.png' %}" />
-            <div class="hero-content">
-                <p class="hero-text">Lorem ipsum dolor sit amet consectetur.</p>
-                <h1 class="hero-title">Lorem ipsum dolor sit amet consectetur.</h1>
-                <button class="hero-button">Learn More</button>
-            </div>
-            <!-- Cards Section -->
-            <div class="hero-cards">
-                <div class="card">
-                  <img src="{% static 'assets/AtSign_1.svg' %}" alt="">
-                  <p class="card-text">Connect with Chevening Alumni in Kenya and expand your network</p>
-                </div>
-                <!-- Additional cards as needed -->
-            </div>
-        </div>
-
-        <!-- DarkContainer Section -->
-        <div class="DarkContainer">
-            <img class="ImageLarge" src="https://via.placeholder.com/488x448" />
-            <div class="TextContainer">
-                <div class="MainText">Lorem ipsum dolor sit amet consectetur.</div>
-                <div class="SubText">Lorem ipsum dolor sit amet consectetur.</div>
-            </div>
-        </div>
-
-        <!-- Partners Section -->
-        <div class="PartnersSection">
-            <h2 class="PartnersTitle">Our Partners</h2>
-            <div class="PartnersContainer">
-                <a href="#" class="Logo">
-                    <img src="https://via.placeholder.com/100x100" alt="Partners Logo" />
-                </a>
-                <!-- Additional partner logos -->
-            </div>    
-        </div>
-
-        <!-- Footer -->
-        <footer class="Footer">
-            <div class="FooterContent">
-                <a href="#"><img class="LogoImage" src="{% static 'assets/CheveningLogoLight.png' %}" alt="Company Logo" /></a>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Chevening Alumni Association Kenya</title>
+            <style>
+                * { box-sizing: border-box; margin: 0; padding: 0; }
+                body { font-family: Arial, sans-serif; }
+                
+                /* Hero section styling with background image and overlay */
+                .hero {
+                    font-family: 'Merriweather';
+                    height: 100vh;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    position: relative;
+                    background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), 
+                                url('{% static "assets/heroBackground.png" %}') center/cover no-repeat;
+                    padding: 100px 20px;
+                    color: #1E293B;
+                }
+                
+                .hero h1 {
+                    font-size: 80px;
+                    font-weight: 500;
+                    margin-bottom: 10px;
+                }
+                
+                .hero p {
+                    font-size: 32px;
+                    margin-bottom: 20px;
+                    font-weight: 400;
+                }
+                
+                .hero button {
+                    padding: 10px 20px;
+                    font-size: 20px;
+                    background-color: #0A142F;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                }
+                
+                .hero button:hover { background-color: #0056b3; }
+                
+                .hero button a {
+                    color: white;
+                    text-decoration: none;
+                }
         
-                <div class="FooterLinks">
-                    <div class="FooterColumn">
-                        <h3 class="ColumnTitle">Learn More</h3>
-                        <a href="#" class="ColumnItem">About Us</a>
-                        <a href="#" class="ColumnItem">Press Releases</a>
-                        <a href="#" class="ColumnItem">Events</a>
-                        <a href="#" class="ColumnItem">Jobs</a>
-                        <a href="#" class="ColumnItem">Privacy Policy</a>
+                /* Responsive adjustments */
+                @media (max-width: 991px) {
+                    .hero h1 { font-size: 60px; }
+                    .hero p { font-size: 24px; }
+                }
+                
+                @media (max-width: 768px) {
+                    .hero h1 { font-size: 40px; }
+                    .hero p { font-size: 18px; }
+                }
+            </style>
+        </head>
+        <body>
+        
+        <!-- Hero Section -->
+        <div class="hero">
+            <img src="{% static 'assets/CheveningLogo.png' %}" alt="Chevening Logo" style="width: 350px; height: auto; margin-bottom: 20px;">
+            <h1>Chevening Alumni Association Kenya</h1>
+            <p>Empowering Kenya's Future Through Global Leadership</p>
+            <!-- <button><a href="#">Learn More</a></button> -->
+        </div>
+        
+        </body>
+        
+        
+            <!-- About Us Section -->
+            <section id="about_us" style="width: 100%; padding: 16px 200px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 16px;">
+                <p style="text-align: center; color: black; font-size: 48px; font-family: 'General Sans', sans-serif; font-weight: 500; line-height: 110%; font-family: Merriweather;">About Us</p>
+                <div style="display: flex; flex-direction: row; justify-content: center; align-items: flex-start; gap: 32px; width: 100%;">
+            
+                    <p style="flex: 1; color: black; font-size: 20px; font-family: 'General Sans', sans-serif; font-weight: 400; line-height: 1.5; font-family: Merriweather;">
+                        The Chevening scholarship alumni association is a registered community-based group in Nairobi, Kenya. Its members consist of former scholars funded by the Chevening scholarship program by the British Foreign, Commonwealth, and Development Office (FCDO) to pursue their Master's studies in the UK. The association aims to harness the collective synergies, experience, and expertise of these young professionals for the development of Kenya.
+                    </p>
+            
+                    <!-- Carousel Container -->
+                    <div id="carousel" style="flex: 1; position: relative; width: 50%; height: auto; border-radius: 6px; overflow: hidden;">
+                        <!-- Image 1 -->
+                        <img src="{% static 'assets/image1.jpg' %}" alt="Image 1" class="carousel-image" style="width: 100%; height: auto; display: none; object-fit: cover;">
+                        <!-- Image 2 -->
+                        <img src="{% static 'assets/image2.jpg' %}" alt="Image 2" class="carousel-image" style="width: 100%; height: auto; display: none; object-fit: cover;">
+                        <!-- Image 3 -->
+                        <img src="{% static 'assets/image3.jpg' %}" alt="Image 3" class="carousel-image" style="width: 100%; height: auto; display: none; object-fit: cover;">
                     </div>
                 </div>
+            
+                <!-- View Gallery Button (Centered) -->
+                <div style="display: flex; justify-content: center; margin-top: 20px;">
+                    <a href="{% url 'dbusers:gallery_view' %}">
+                        <button style="padding: 10px 20px; background-color: #007bff; color: #fff; border: none; font-size: 16px; cursor: pointer; border-radius: 5px;">
+                            View Gallery
+                        </button>
+                    </a>
+                </div>
+            
+            </section>
+            
+            <script>
+                let currentImageIndex = 0;
+                const images = document.querySelectorAll('.carousel-image');
+                const totalImages = images.length;
+            
+                // Function to show the current image
+                function showImage(index) {
+                    // Hide all images
+                    images.forEach(img => img.style.display = 'none');
+                    // Show the selected image
+                    images[index].style.display = 'block';
+                }
+            
+                // Function to change images automatically
+                function changeImage() {
+                    currentImageIndex = (currentImageIndex + 1) % totalImages; // Loop back to the first image after the last
+                    showImage(currentImageIndex);
+                }
+            
+                // Start the carousel
+                setInterval(changeImage, 8000); // Change image every 8 seconds
+            
+                // Show the first image initially
+                showImage(currentImageIndex);
+            </script> 
+
+            
+
+            <!-- Number Stats Section -->
+            <section class="NumberStats" style="width: 100%; padding: 48px 10%; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 16px;">
+                <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 32px; width: 100%;">
+                    <div style="flex: 1; text-align: center;">
+                        <div style="font-size: 64px; color: black; font-family: 'Merriweather'; font-weight: 500; line-height: 1.2;">700+</div>
+                        <div style="font-size: 24px; color: black; font-family: 'Merriweather'; font-weight: 400;">Registered Alumni globally</div>
+                    </div>
+                    <div style="flex: 1; text-align: center;">
+                        <div style="font-size: 64px; color: black; font-family: 'Merriweather'; font-weight: 500; line-height: 1.2;">5+</div>
+                        <div style="font-size: 24px; color: black; font-family: 'Merriweather'; font-weight: 400;">Years Active</div>
+                    </div>
+                    <div style="flex: 1; text-align: center; font-family: 'Merriweather';">
+                        <div style="font-size: 64px; color: black; font-family: 'Merriweather'; font-weight: 500; line-height: 1.2;">40+</div>
+                        <div style="font-size: 24px; color: black; font-family: 'Merriweather'; font-weight: 400;">Countries Represented</div>
+                    </div>
+                    <div style="flex: 1; text-align: center;">
+                        <div style="font-size: 64px; color: black; font-family: 'Merriweather'; font-weight: 500; line-height: 1.2;">70+</div>
+                        <div style="font-size: 24px; color: black; font-family: 'Merriweather'; font-weight: 400;">Impact Projects</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Objectives-->
+            <section class="Objectives" style="width: 100%; padding: 48px 10%; background: #2c334e; display: flex; flex-direction: column; align-items: center; gap: 32px;">
+                <p style="text-align: center; color: white; font-size: 48px; font-family: 'Merriweather; font-weight: 500; line-height: 110%;">
+                    Our Objectives
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; width: 100%; justify-content: center; align-items: center;">
+                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 16px; background-color: transparent; color: white; font-family: 'General Sans', sans-serif;">
+                        <img src="static/assets/Law 1.svg" alt="Policy Advisory" style="width: 50px; height: 50px; margin-bottom: 8px;">
+                        <div style="text-align: center; font-size: 16px; font-weight: 400; line-height: 1.2;">Policy Advisory Leadership</div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 16px; background-color: transparent; color: white; font-family: 'General Sans', sans-serif;">
+                        <img src="static/assets/User Groups 1.svg" alt="Community Engagement" style="width: 50px; height: 50px; margin-bottom: 8px;">
+                        <div style="text-align: center; font-size: 16px; font-weight: 400; line-height: 1.2;">Community Engagement</div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 16px; background-color: transparent; color: white; font-family: 'General Sans', sans-serif;">
+                        <img src="static/assets/Great Britain 1.svg" alt="British Partnership" style="width: 50px; height: 50px; margin-bottom: 8px;">
+                        <div style="text-align: center; font-size: 16px; font-weight: 400; line-height: 1.2;">British High Commission Partnership</div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 16px; background-color: transparent; color: white; font-family: 'General Sans', sans-serif;">
+                        <img src="static/assets/Positive Dynamic 1.svg" alt="National Development" style="width: 50px; height: 50px; margin-bottom: 8px;">
+                        <div style="text-align: center; font-size: 16px; font-weight: 400; line-height: 1.2;">National Development</div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 16px; background-color: transparent; color: white; font-family: 'General Sans', sans-serif;">
+                        <img src="static/assets/Handshake 1.svg" alt="Strategic Partnerships" style="width: 50px; height: 50px; margin-bottom: 8px;">
+                        <div style="text-align: center; font-size: 16px; font-weight: 400; line-height: 1.2;">Strategic Partnerships</div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 16px; background-color: transparent; color: white; font-family: 'General Sans', sans-serif;">
+                        <img src="static/assets/Lawyer 1.svg" alt="Professional Development" style="width: 50px; height: 50px; margin-bottom: 8px;">
+                        <div style="text-align: center; font-size: 16px; font-weight: 400; line-height: 1.2;">Professional Development</div>
+                    </div>
+                </div>
+            </section> 
+
+            <!-- Services Section -->
+            
+            <section id="Services" style="width: 100%; padding: 32px 10%; display: flex; flex-direction: column; align-items: center;">
+                <p style="text-align: center; color: black; font-size: 48px; font-family: 'General Sans', sans-serif; font-weight: 500; line-height: 110%;">
+                    Our Services
+                </p>
+                <div style="width: 100%; display: flex; justify-content: center; flex-wrap: wrap;">
+                    
+                    <!-- Policy Advisory -->
+                    <div style="flex: 1 1 30%; min-width: 300px; max-width: 33.33%; padding: 16px; box-sizing: border-box; border-right: 1px solid #9b9799; display: flex; flex-direction: column; align-items: center;">
+                        <img src="static/assets/Auction 1.svg" alt="Policy Advisory Icon" style="width: 50px; height: 50px; margin-bottom: 16px;">
+                        <div style="text-align: center; color: black; font-size: 32px; font-family: 'General Sans', sans-serif; font-weight: 400; line-height: 38.4px;">Policy Advisory</div>
+                        <div style="text-align: center; color: black; font-size: 16px; font-family: 'Gambetta', serif; font-weight: 400; line-height: 19.2px; margin: 8px 0;">
+                            Our professionals work in National, Regional, and International policy-making bodies and are available to advise on various thematic areas.
+                        </div>
+                        <!-- <div style="padding: 8px 16px; background: #1e293b; border-radius: 6px; color: white; font-size: 14px; font-family: 'General Sans', sans-serif; font-weight: 500; line-height: 24px; display: flex; align-items: center; cursor: pointer;">
+                            Learn More
+                            <img src="static/assets/external-link.svg" alt="External link icon" style="margin-left: 8px; padding: 4px; display: inline-block; border-radius: 50%;">
+                        </div> -->
+                    </div>
+            
+                    <!-- Community Engagement -->
+                    <div style="flex: 1 1 30%; min-width: 300px; max-width: 33.33%; padding: 16px; box-sizing: border-box; border-right: 1px solid #9b9799; display: flex; flex-direction: column; align-items: center;">
+                        <img src="static/assets/Connection to Account 1.svg" alt="Community Engagement Icon" style="width: 50px; height: 50px; margin-bottom: 16px;">
+                        <div style="text-align: center; color: black; font-size: 32px; font-family: 'General Sans', sans-serif; font-weight: 400; line-height: 38.4px;">Community Engagement</div>
+                        <div style="text-align: center; color: black; font-size: 16px; font-family: 'Gambetta', serif; font-weight: 400; line-height: 19.2px; margin: 8px 0;">
+                            Chevening Alumni engage in capacity-building activities like digital inclusion, legal outreach, and public health education.
+                        </div>
+                        <!-- <div style="padding: 8px 16px; background: #1e293b; border-radius: 6px; color: white; font-size: 14px; font-family: 'General Sans', sans-serif; font-weight: 500; line-height: 24px; display: flex; align-items: center; cursor: pointer;">
+                            Learn More>
+                            <img src="static/assets/external-link.svg" alt="External link icon" style="margin-left: 8px; padding: 4px; display: inline-block; border-radius: 50%;">
+                        </div> -->
+                    </div>
+            
+                    <!-- Professional Consultancy -->
+                    <div style="flex: 1 1 30%; min-width: 300px; max-width: 33.33%; padding: 16px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center;">
+                        <img src="static/assets/Business 1.svg" alt="Professional Consultancy Icon" style="width: 50px; height: 50px; margin-bottom: 16px;">
+                        <div style="text-align: center; color: black; font-size: 32px; font-family: 'General Sans', sans-serif; font-weight: 400; line-height: 38.4px;">Professional Consultancy</div>
+                        <div style="text-align: center; color: black; font-size: 16px; font-family: 'Gambetta', serif; font-weight: 400; line-height: 19.2px; margin: 8px 0;">
+                            Our alumni offer consultancy across various fields, including law, finance, technology, environment, public health, and more.
+                        </div>
+                        <!-- <div style="padding: 8px 16px; background: #1e293b; border-radius: 6px; color: white; font-size: 14px; font-family: 'General Sans', sans-serif; font-weight: 500; line-height: 24px; display: flex; align-items: center; cursor: pointer;">
+                            Learn More
+                            <img src="assets/external-link.svg" alt="External link icon" style="margin-left: 8px; padding: 4px; display: inline-block; border-radius: 50%;">
+                        </div> -->
+                    </div>
+            
+                </div>
+            </section>
+
+        <!-- Partners Section -->
+        <section class="OurPartners" style="width: 100%; padding: 32px 5%; border-top: 1px solid black; display: flex; flex-direction: column; align-items: center;">
+            <p style="text-align: center; color: black; font-size: 64px; font-family: General Sans, sans-serif; font-weight: 500; line-height: 57.6px; word-wrap: break-word;">Our Partners</p>
+            <div style="width: 100%; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; background-color: white;">
+                <img style="flex: 1 1 15%; max-width: 150px;  " src="static/assets/kncci.png" alt="Partner Logo" />
+                <img style="flex: 1 1 15%; max-width: 200px; height: auto;" src="static/assets/bcc.png" alt="Partner Logo" />
+                <!-- <img style="flex: 1 1 15%; max-width: 150px; height: auto;" src="static/assets/gcf.png" alt="Partner Logo" /> -->
+                <!-- <img style="flex: 1 1 20%; max-width: 220px; height: auto;" src="static/assets/chatham.png" alt="Partner Logo" /> -->
+                <!-- <img style="flex: 1 1 15%; max-width: 200px; height: auto;" src="static/assets/tiis.png" alt="Partner Logo" /> -->
+                <img style="flex: 1 1 15%; max-width: 100px; height: auto;" src="static/assets/ndc.png" alt="Partner Logo" />
+                <img style="flex: 1 1 15%; max-width: 110px; height: auto;" src="static/assets/knhcr.png" alt="Partner Logo" />
+                <img style="flex: 1 1 30%; max-width: 300px; height: auto;" src="static/assets/theCommonwealthS.png" alt="Partner Logo" />
+                <img style="flex: 1 1 20%; max-width: 200px; height: auto;" src="static/assets/PoK.png" alt="Partner Logo" />
+                <img style="flex: 1 1 20%; max-width: 250px; height: auto;" src="static/assets/BritishCouncil.png" alt="Partner Logo" />
+                <img style="flex: 1 1 15%; max-width: 150px; height: auto;" src="static/assets/KBA.png" alt="Partner Logo" />
+                <img style="flex: 1 1 10%; max-width: 120px; height: auto;" src="static/assets/NPs.png" alt="Partner Logo" />
             </div>
-            <div class="Divider"></div>
-            <div class="FooterCopyright">© 2024, Chevening Kenya Alumni Network. | All Rights Reserved</div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="width: 100%; padding: 32px 5%; background: #0A142F; display: flex; flex-direction: column; align-items: center; padding-top: 48px;">
+            <div style="width: 100%; max-width: 1200px; display: flex; flex-direction: column; align-items: center; gap: 24px;">
+                <div style="width: 100%; display: flex; flex-direction: column; gap: 24px; align-items: center;">
+                    <img src="static/assets/CheveningLogoLight.png" alt="Logo" style="width: 300px; margin-bottom: 16px;">
+                    <div style="width: 100%; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 16px;">
+                        
+                        <!-- Learn More Section -->
+                        <div style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 8px;">
+                            <div style="color: white; font-size: 16px; font-family: General Sans, sans-serif; font-weight: 500;">Learn More</div>
+                            <a href="#about_us" style="color: white; opacity: 0.8; font-size: 15px; font-family: General Sans, sans-serif; font-weight: 400;">About Us</a>
+                            <!-- <a href=""  style="color: white; opacity: 0.8; font-size: 15px; font-family: General Sans, sans-serif; font-weight: 400;">Press Releases</a> -->
+                            <a href="{% url 'dbusers:event_list' %}"  style="color: white; opacity: 0.8; font-size: 15px; font-family: General Sans, sans-serif; font-weight: 400;">Events</a>
+                            <!-- <a href=""  style="color: white; opacity: 0.8; font-size: 15px; font-family: General Sans, sans-serif; font-weight: 400;">Jobs</a> -->
+                            <a href=""  style="color: white; opacity: 0.8; font-size: 15px; font-family: General Sans, sans-serif; font-weight: 400;">Privacy Policy</a>
+                        </div>
+        
+                        <!-- Services Section -->
+                        <div style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 8px;">
+                            <div style="color: white; font-size: 16px; font-family: General Sans, sans-serif; font-weight: 500;">Services</div>
+                            <a href="https://www.chevening.org/scholarships/"  style="color: white; opacity: 0.8; font-size: 15px; font-family: General Sans, sans-serif; font-weight: 400;">Scholarships</a>
+                            <!-- <a href=""  style="color: white; opacity: 0.8; font-size: 15px; font-family: General Sans, sans-serif; font-weight: 400;">Lorem Ipsum</a> -->
+                            <a href="{% url 'dbusers:newsletter_list' %}"  style="color: white; opacity: 0.8; font-size: 15px; font-family: General Sans, sans-serif; font-weight: 400;">Newsletter</a>
+                        </div>
+        
+                        <!-- Contact Us Section -->
+                        <div style="flex: 1 1 250px; display: flex; flex-direction: column; gap: 8px;">
+                            <div style="color: white; font-size: 16px; font-family: General Sans, sans-serif; font-weight: 500;">Contact Us</div>
+                            <div style="display: flex; gap: 8px; align-items: center;">
+                                <span style="color: white; opacity: 0.7; font-size: 14px; font-family: General Sans, sans-serif; font-weight: 400;">Call Us:</span>
+                                <a href="tel:254726875221"  style="color: white; font-size: 14px; font-family: General Sans, sans-serif; font-weight: 500;">+254 726 875221</a>
+                            </div>
+                            <div style="display: flex; gap: 8px; align-items: center;">
+                                <span style="color: white; opacity: 0.7; font-size: 14px; font-family: General Sans, sans-serif; font-weight: 400;">Email:</span>
+                                <a href="mailto:administrator@cheveningkenya.org" style="color: white; font-size: 14px; font-family: General Sans, sans-serif; font-weight: 500; text-decoration: underline;">administrator@cheveningkenya.org</a>
+                            </div>
+                            <div style="display: flex; gap: 8px; align-items: center;">
+                                <span style="color: white; opacity: 0.7; font-size: 14px; font-family: General Sans, sans-serif; font-weight: 400;">Address:</span>
+                                <span style="color: white; font-size: 14px; font-family: General Sans, sans-serif; font-weight: 500;">P.O Box 62263 - 00200, Nairobi, Kenya</span>
+                            </div>
+                        </div>
+        
+                        <!-- Social Media Section -->
+                        <div style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 8px;">
+                            <div style="color: white; font-size: 16px; font-family: General Sans, sans-serif; font-weight: 500;">Follow Us</div>
+                            <div style="display: flex; gap: 16px;">
+                                <!-- <img src="static/assets/Facebook F.svg" alt="Facebook" style="width: 18px; height: 18px;"> -->
+                                <!-- <img src="static/assets/Instagram Old.svg" alt="Instagram" style="width: 18px; height: 18px;"> -->
+                                <a href="https://x.com/ChevKenya" target="_blank">
+                                    <img src="static/assets/TwitterX_1.svg" alt="Instagram" style="width: 18px; height: 18px;">
+                                </a>
+                                <a href="https://www.linkedin.com/in/chevkenya-secretariat/" target="_blank">
+                                    <img src="static/assets/LinkedIn_Icon.png" alt="Instagram" style="width: 18px; height: 18px;">
+                                </a>
+                                <!-- <img src="static/assets/YouTube.svg" alt="YouTube" style="width: 18px; height: 18px;"> -->
+                                <!-- <img src="static/assets/FacebookMessenger_1.svg" alt="WordPress" style="width: 18px; height: 18px;"> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="width: 100%; height: 1px; background: white; opacity: 0.15; margin-top: 24px;"></div>
+                <div style="text-align: center; color: white; opacity: 0.75; font-size: 14px; font-family: General Sans, sans-serif; font-weight: 400; margin-top: 16px;">
+                    Copyright © 2024 Chevening Kenya Alumni Network | All Rights Reserved
+                </div>
+            </div>
         </footer>
+           
     </div>
 </body>
 </html>
+<style>
+    @media (max-width: 768px) {
+        .responsive-heading {
+            font-size: 18px;
+        }
+    }
+</style>
+
 {% endblock %}
+
+<style>
+    @media (max-width: 768px) {
+        .responsive-heading {
+            font-size: 18px;
+        }
+    }
+</style>

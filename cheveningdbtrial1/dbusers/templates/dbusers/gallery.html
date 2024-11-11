@@ -1,0 +1,51 @@
+{% extends "dbusers/base.html" %}
+
+{% block content %}
+<h1>Gallery</h1>
+<div class="gallery-container" style="display: flex; flex-direction: column; gap: 30px; padding: 20px;">
+    {% for gallery in galleries %}
+        <h2>{{ gallery.title }}</h2>
+        <div class="gallery-images" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+            {% for image in gallery.images.all %}
+                <div class="gallery-item" style="margin: 10px; max-width: 320px; flex-grow: 1; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; height: 250px;">
+                    <img src="{{ image.image.url }}" alt="{{ image.caption }}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; transition: transform 0.3s ease-in-out;">
+                    <p style="position: absolute; bottom: 10px; left: 0; right: 0; background-color: rgba(0, 0, 0, 0.6); color: white; padding: 8px; font-size: 16px; text-align: center; font-weight: bold; border-radius: 4px; opacity: 0; transform: translateY(20px); transition: opacity 0.3s ease, transform 0.3s ease;">
+                        {{ image.caption }}
+                    </p>
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
+
+<style>
+    @media (max-width: 768px) {
+        .responsive-heading {
+            font-size: 18px;
+        }
+    }
+</style>
+
+{% endblock %}
+
+<script>
+    // JS for hover effect on gallery item (Optional, if you'd prefer to add interactivity here)
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    galleryItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            item.querySelector('p').style.opacity = 1;
+            item.querySelector('p').style.transform = 'translateY(0)';
+        });
+        item.addEventListener('mouseleave', () => {
+            item.querySelector('p').style.opacity = 0;
+            item.querySelector('p').style.transform = 'translateY(20px)';
+        });
+    });
+</script>
+<style>
+    @media (max-width: 768px) {
+        .responsive-heading {
+            font-size: 18px;
+        }
+    }
+</style>

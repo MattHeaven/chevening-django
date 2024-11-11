@@ -1,0 +1,59 @@
+{% extends 'dbusers/base.html' %}
+
+{% block content %}
+  <div style="max-width: 800px; margin: 50px auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <h1 style="text-align: center; color: #333; font-size: 2em; margin-bottom: 20px;">Create Your Profile</h1>
+    <form method="post" style="display: flex; flex-direction: column; gap: 20px;">
+        {% csrf_token %}
+        <div>
+            <label for="first_name" style="font-size: 1em; font-weight: bold; color: #333;">First Name</label>
+            <input type="text" name="first_name" id="first_name" style="padding: 10px; font-size: 1em; border: 1px solid #ddd; border-radius: 4px; background-color: #f9f9f9; width: 100%; box-sizing: border-box;">
+        </div>
+        <div>
+            <label for="surname" style="font-size: 1em; font-weight: bold; color: #333;">Surname</label>
+            <input type="text" name="surname" id="surname" style="padding: 10px; font-size: 1em; border: 1px solid #ddd; border-radius: 4px; background-color: #f9f9f9; width: 100%; box-sizing: border-box;">
+        </div>
+        <div>
+            <label for="email" style="font-size: 1em; font-weight: bold; color: #333;">Email</label>
+            <input type="email" name="email" id="email" style="padding: 10px; font-size: 1em; border: 1px solid #ddd; border-radius: 4px; background-color: #f9f9f9; width: 100%; box-sizing: border-box;">
+        </div>
+        <div>
+            <label for="phone_number" style="font-size: 1em; font-weight: bold; color: #333;">Phone Number</label>
+            <input type="tel" name="phone_number" id="phone_number" style="padding: 10px; font-size: 1em; border: 1px solid #ddd; border-radius: 4px; background-color: #f9f9f9; width: 100%; box-sizing: border-box;">
+        </div>
+        <div>
+            <label for="organisation" style="font-size: 1em; font-weight: bold; color: #333;">Organisation</label>
+            <input type="text" name="organisation" id="organisation" style="padding: 10px; font-size: 1em; border: 1px solid #ddd; border-radius: 4px; background-color: #f9f9f9; width: 100%; box-sizing: border-box;">
+        </div>
+        <div>
+            <label for="job_title" style="font-size: 1em; font-weight: bold; color: #333;">Job Title</label>
+            <input type="text" name="job_title" id="job_title" style="padding: 10px; font-size: 1em; border: 1px solid #ddd; border-radius: 4px; background-color: #f9f9f9; width: 100%; box-sizing: border-box;">
+        </div>
+        <div>
+            <label for="sector" style="font-size: 1em; font-weight: bold; color: #333;">Sector</label>
+            <input type="text" name="sector" id="sector" style="padding: 10px; font-size: 1em; border: 1px solid #ddd; border-radius: 4px; background-color: #f9f9f9; width: 100%; box-sizing: border-box;">
+        </div>
+        <div>
+            <label for="year_of_chevening_award" style="font-size: 1em; font-weight: bold; color: #333;">Year of Chevening Award</label>
+            <input type="text" name="year_of_chevening_award" id="year_of_chevening_award" style="padding: 10px; font-size: 1em; border: 1px solid #ddd; border-radius: 4px; background-color: #f9f9f9; width: 100%; box-sizing: border-box;">
+        </div>
+        <div>
+            <label for="university" style="font-size: 1em; font-weight: bold; color: #333;">University</label>
+            <input type="text" name="university" id="university" style="padding: 10px; font-size: 1em; border: 1px solid #ddd; border-radius: 4px; background-color: #f9f9f9; width: 100%; box-sizing: border-box;">
+        </div>
+        <div>
+            <label for="course" style="font-size: 1em; font-weight: bold; color: #333;">Course</label>
+            <input type="text" name="course" id="course" style="padding: 10px; font-size: 1em; border: 1px solid #ddd; border-radius: 4px; background-color: #f9f9f9; width: 100%; box-sizing: border-box;">
+        </div>
+        <button type="submit" style="padding: 12px 20px; background-color: #007bff; color: white; font-size: 1.2em; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s; width: 100%; box-sizing: border-box;">Submit</button>
+    </form>
+  </div>
+{% endblock %}
+<style>
+    @media (max-width: 768px) {
+        .responsive-heading {
+            font-size: 18px;
+        }
+    }
+</style>
+

@@ -55,11 +55,11 @@
     word-wrap: break-word;
 }
 
-.sign-in {
+/* .sign-in {
     border: 1px solid #93969D;
     padding: 5px 20px;
     border-radius: 2px;
-}
+} */
 
 .hero {
     align-self: stretch;

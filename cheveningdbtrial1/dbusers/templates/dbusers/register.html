@@ -4,20 +4,36 @@
 
 {% block content %}
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <div class="container" style="margin-top: 30px;">
-    <form action="" method="POST">
-      {% csrf_token %}
-      <fieldset class="form-group">
-          <legend class="border-bottom mb-4" style="color: white;">Join Now</legend>
-          {{ form|crispy }}
-      </fieldset>
-      <div class="form-group" id="signup-button">
-          <button class="btn ">Sign Up</button>
-      </div>
-      <div class="form-group">
-          <small class="text-muted ml-3" >Already have an account? <a href="{% url 'dbusers:login' %}">Sign In</a></small>
-      </div>
-    </form>
+    <div class="container d-flex justify-content-center" style="margin-top: 30px;">
+        <div class="register-card-container" style="width: 600px; background-color: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); color: rgb(8, 8, 8);">
+            <div class="text-center">
+                <img src="{% static 'assets/CheveningLogo.png' %}" alt="Logo" style="width: 150px; margin-bottom: 20px;">
+            </div>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4" style="color: black; text-align: center;">Join Now</legend>
+                    {{ form|crispy }}
+                </fieldset>
+                <div class="form-group text-center" id="signup-button" style="margin-top: 20px;">
+                    <button class="btn btn-primary" style="width: 100%;">Sign Up</button>
+                </div>
+                <div class="form-group text-center" style="margin-top: 15px;">
+                    <small style="color: black;">Already have an account? <a href="{% url 'dbusers:login' %}" style="color: black;">Sign In</a></small>
+                </div>
+            </form>
+        </div>
     </div>
 
-{% endblock %}
+    <style>
+        .card-container:hover {
+            background-color: white; /* Transparent background on hover */
+            box-shadow: none; /* No shadow on hover */
+        }
+        @media (max-width: 768px) {
+            .responsive-heading {
+                font-size: 18px;
+            }
+        }
+    </style>
+ {% endblock %}   

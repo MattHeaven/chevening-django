@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+from django.conf import settings
+from django.conf.urls.static import static
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -155,4 +157,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # For testing
 # For production, use an appropriate backend like SMTP
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = os.path.join ( BASE_DIR / 'media')
+LOGIN_REDIRECT_URL = '/dbusers/home/'
+AUTH_USER_MODEL = 'dbusers.CustomUser'
+
+

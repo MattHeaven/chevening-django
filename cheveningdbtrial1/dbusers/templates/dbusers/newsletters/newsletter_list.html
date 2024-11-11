@@ -1,0 +1,42 @@
+<!-- newsletter_list.html -->
+{% extends "dbusers/base.html" %}
+
+{% block content %}
+    <div style="padding: 40px; max-width: 800px; margin: 0 auto; text-align: center; font-family: Arial, sans-serif;">
+        <h1 style="font-size: 2.5em; color: #333; margin-bottom: 10px;">Our Newsletters</h1>
+        <p style="color: #555; font-size: 1.1em; margin-bottom: 30px;">
+            Browse through our latest newsletters for updates and insights.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+            {% for newsletter in newsletters %}
+                <div style="background-color: #f9f9f9; border-radius: 8px; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: left;">
+                    <h2 style="font-size: 1.5em; color: #2c3e50;">{{ newsletter.title }}</h2>
+                    <p style="color: #7f8c8d; font-size: 0.9em; margin-bottom: 15px;">
+                        Published on {{ newsletter.date_uploaded|date:"F j, Y" }}
+                    </p>
+                    <a href="{{ newsletter.pdf_file.url }}" target="_blank" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: white; border-radius: 4px; text-decoration: none; font-weight: bold;">
+                        View Newsletter
+                    </a>
+                </div>
+            {% empty %}
+                <p style="color: #c0392b;">No newsletters available at the moment. Please check back later!</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    <style>
+        @media (max-width: 768px) {
+            .responsive-heading {
+                font-size: 18px;
+            }
+        }
+      </style>
+          
+{% endblock %}
+<style>
+    @media (max-width: 768px) {
+        .responsive-heading {
+            font-size: 18px;
+        }
+    }
+</style>
