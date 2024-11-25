@@ -1,0 +1,16 @@
+{% extends 'dbusers/base.html' %}
+
+{% block content %}
+<div style="max-width: 800px; margin: 50px auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <h2 style="text-align: center; color: #333; font-size: 2em; margin-bottom: 20px;">Profile Details</h2>
+    <p><strong>Name:</strong> {{ profile.first_name }} {{ profile.surname }}</p>
+    <p><strong>Email:</strong> {{ profile.user.email }}</p>
+    <p><strong>Phone Number:</strong> {{ profile.phone_number }}</p>
+    <p><strong>Organisation:</strong> {{ profile.organisation }}</p>
+    <p><strong>Job Title:</strong> {{ profile.job_title }}</p>
+    <p><strong>Sector:</strong> {{ profile.sector }}</p>
+    <p><strong>Year of Chevening Award:</strong> {{ profile.year_of_chevening_award }}</p>
+    <p><strong>University:</strong> {{ profile.university }}</p>
+    <p><strong>Course:</strong> {{ profile.course }}</p>
+</div>
+{% endblock %}

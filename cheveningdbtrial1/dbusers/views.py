@@ -11,6 +11,8 @@ from .models import GalleryImage
 from .models import Gallery
 from .models import Event
 from .models import Newsletter
+from django.shortcuts import get_object_or_404
+
 def home(request):
     return render(request, 'dbusers/home.html')
 
@@ -38,7 +40,9 @@ def logout_view(request):
     return redirect('dbusers:home')  # Adjust this according to your URL configuration
 
 def profile(request):
-    return render(request, 'dbusers/profile.html')
+    is_superuser = request.user.is_superuser
+    return render(request, 'dbusers/profile.html', {'is_superuser': is_superuser})
+    # return render(request, 'dbusers/profile.html')
 
 def contact(request):
     if request.method == 'POST':
@@ -77,18 +81,31 @@ def email_inquiry(name, email, message, subject):
     )
 
 def create_profile(request):    
+    try:
+        profile = Profile.objects.get(user=request.user)
+        return redirect('dbusers:profile_details')  # Redirect to profile details if it exists
+    except Profile.DoesNotExist:
+        pass  # Continue to create a new profile
+
     if request.method == 'POST':
         form = ProfileForm(request.POST)
         if form.is_valid():
-            Profile.objects.create(**form.cleaned_data)
+            profile = form.save(commit=False)
+            profile.user = request.user  # Associate profile with the logged-in user
+            profile.save()
             messages.success(request, "Profile created successfully!")
-            return redirect('dbusers:profile')
+            return redirect('dbusers:profile_details')
         else:
             messages.error(request, "Error creating profile. Please check your inputs.")
     else:
         form = ProfileForm()
     
     return render(request, 'dbusers/create_profile.html', {'form': form})
+
+def profile_details(request):
+    # Retrieve the user's profile
+    profile = get_object_or_404(Profile, user=request.user)
+    return render(request, 'dbusers/profile_details.html', {'profile': profile})
 
 def profile_success(request):       
     return render(request, 'dbusers/profile_success.html')
